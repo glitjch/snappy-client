@@ -19,7 +19,9 @@ function App() {
       body: JSON.stringify({ userData: userDataInput })
     });
     const data = await response.json();
-    console.log("front", data )
+    setResult(data.result);
+    setUserDataInput("");
+    console.log("front", data );
   }
 
   // VIEW
