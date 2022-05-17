@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Instructions from "./Instructions";
 
 
@@ -6,19 +6,27 @@ import Instructions from "./Instructions";
 // COMPONENT
 function App() {
   const [userDataInput, setUserDataInput] = useState()
+  const [ result, setResult ] = useState()
 
-  async function handleClick() {
-    const response = await fetch('http://localhost:8080/cors', {mode:'cors', method:'post'});
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const response = await fetch('http://localhost:8080/cors', {
+      mode:'cors', 
+      method:'post',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userData: userDataInput })
+    });
     const data = await response.json();
     console.log("front", data )
   }
 
-  
   // VIEW
   return (
     <div>
       <Instructions />
-      <form onSubmit={handleClick}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="user"
@@ -26,7 +34,7 @@ function App() {
           value={userDataInput}
           onChange={(e)=> setUserDataInput(e.target.value)}
         />
-          <button type="submit" value="Generate pitch">click me</button>
+        <button type="submit" value="Generate pitch">Generate Pitch</button>
       </form>
     </div>
   );
