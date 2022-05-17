@@ -22,7 +22,7 @@ function App() {
     });
     const data = await response.json();
     setResult(data.result);
-    setUserDataInput("");
+    setUserDataInput(`name: \ncareer: \nspecialty: \njob-description: \ngoal:`);
   }
 
   return (
@@ -31,8 +31,6 @@ function App() {
         <Instructions />
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
-            cols="40" 
-            rows="5"
             className={styles.input}
             type="text"
             name="user"
