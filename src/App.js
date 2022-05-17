@@ -1,29 +1,27 @@
 import { useEffect, useState } from "react";
-
-const { Configuration, OpenAIApi } = require("openai");
-const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY
-});
-const openai = new OpenAIApi(configuration);
-const response = openai.listEngines();
+import Instructions from "./Instructions";
 
 
+
+// COMPONENT
 function App() {
-  const [responseData, setResponseData] = useState()
+  const [userDataInput, setUserDataInput] = useState()
 
-  const handleClick = () =>{
-    setResponseData(response)
+  async function handleClick() {
+    const response = await fetch('http://localhost:8080/cors', {mode:'cors', method:'post'});
+    const data = await response.json();
+    console.log("front", data )
   }
 
-  useEffect(() => {
-    console.log(responseData)
-  }, [responseData])
   
-
+  // VIEW
   return (
     <div>
-      <button onClick={() =>handleClick()}>click me</button>
-      {responseData && "DID IT" + responseData}
+      <Instructions />
+      <form onSubmit={() =>handleClick()}>
+
+      <button >click me</button>
+      </form>
     </div>
   );
 }
