@@ -18,9 +18,15 @@ function App() {
   return (
     <div>
       <Instructions />
-      <form onSubmit={() =>handleClick()}>
-
-      <button >click me</button>
+      <form onSubmit={handleClick}>
+        <input
+          type="text"
+          name="user"
+          placeholder="Enter your info"
+          value={userDataInput}
+          onChange={(e)=> setUserDataInput(e.target.value)}
+        />
+          <button type="submit" value="Generate pitch">click me</button>
       </form>
     </div>
   );
