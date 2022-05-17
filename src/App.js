@@ -7,7 +7,7 @@ import styles from './App.module.css';
 function App() {
   const [ userDataInput, setUserDataInput ] = useState(
     `name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
-  const [ result, setResult ] = useState("Empty result");
+  const [ result, setResult ] = useState("No pitch yet. Follow the Instructions!");
 
 
   async function handleSubmit(event) {
@@ -37,8 +37,8 @@ function App() {
             onChange={(e) => setUserDataInput(e.target.value)}
           />
            <button type="submit">Generate Pitch</button>
+          <span >{result}</span>
         </form>
-        <div >{result}</div>
       </main>
   );
 };
