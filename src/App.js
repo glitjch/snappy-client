@@ -1,14 +1,18 @@
 import { useState } from "react";
 import Instructions from "./Instructions";
 
+import styles from './App.module.css';
+
 // COMPONENT
 function App() {
-  const [ userDataInput, setUserDataInput ] = useState("")
-  const [ result, setResult ] = useState("Empty result")
+  const [ userDataInput, setUserDataInput ] = useState(
+    `name: \ncareer: \nspecialty: \njob-description: \ngoal:`);
+  const [ result, setResult ] = useState("Empty result");
+
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const response = await fetch("/cors", {
+    const response = await fetch("/pitch", {
       mode:'cors',
       method: "POST",
       headers: {
@@ -25,8 +29,11 @@ function App() {
     <div>
       <main >
         <Instructions />
-        <form onSubmit={handleSubmit}>
-          <input
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <textarea
+            cols="40" 
+            rows="5"
+            className={styles.input}
             type="text"
             name="user"
             placeholder="Follow the instructions"

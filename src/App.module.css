@@ -1,0 +1,14 @@
+
+.form {
+  background-color: black;
+}
+
+.input {
+  height: 100px;
+  width: 200px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere!important;
+  overflow: auto;
+  padding: 1em;  
+  
+}
