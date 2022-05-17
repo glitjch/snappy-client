@@ -6,7 +6,7 @@ import styles from './App.module.css';
 // COMPONENT
 function App() {
   const [ userDataInput, setUserDataInput ] = useState(
-    `name: \ncareer: \nspecialty: \njob-description: \ngoal:`);
+    `name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
   const [ result, setResult ] = useState("Empty result");
 
 
@@ -22,16 +22,14 @@ function App() {
     });
     const data = await response.json();
     setResult(data.result);
-    setUserDataInput(`name: \ncareer: \nspecialty: \njob-description: \ngoal:`);
+    setUserDataInput(`name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
   }
 
   return (
-    <div>
-      <main >
+      <main className={styles.main}>
         <Instructions />
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
-            className={styles.input}
             type="text"
             name="user"
             placeholder="Follow the instructions"
@@ -42,7 +40,6 @@ function App() {
         </form>
         <div >{result}</div>
       </main>
-    </div>
   );
 };
 

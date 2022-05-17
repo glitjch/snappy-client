@@ -1,14 +1,32 @@
-
-.form {
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aquamarine;
+  width: 100%;
+  height:inherit;
+  overflow-y: hidden;
+  margin: 0;
+}
+.main form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: black;
+  min-width: 500px;
+  height: 400px;
 }
 
-.input {
-  height: 100px;
-  width: 200px;
+.main textarea {
+  height: 90%;
+  min-width: 200px;
+  width: 90%;
+  margin: 5px;
+  font-size: larger;
+  line-height: 49px;
   white-space: pre-wrap;
   overflow-wrap: anywhere!important;
   overflow: auto;
   padding: 1em;  
-  
+
 }

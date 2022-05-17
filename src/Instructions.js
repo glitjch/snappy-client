@@ -3,8 +3,9 @@ import React from 'react'
 const Instructions = () => {
   return (
     <>
-      <header>Elevator Pitch Generator</header>
-      <div>Instructions</div>
+      <h1>SNAPPY</h1>
+      <h2>Quick Elevator Pitch Generator</h2>
+      <h4>Instructions</h4>
       <ol>
         <li>Insert name</li>
         <li>Provide your career title</li>
