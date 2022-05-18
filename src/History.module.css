@@ -62,7 +62,9 @@
 
     width: 160px;
     height: 20px;
-    transition: 0.3;
+    transition: 0.3s;
+    transition-delay: 0.1s;
+
 
     border-bottom-left-radius: 10px;
     border-style: solid;
@@ -84,7 +86,7 @@
   }
 }
 
-@media only screen and (max-width: 428px) {
+@media only screen and (max-width: 500px) {
   .main {
     position: fixed;
     right: 0;
@@ -107,6 +109,7 @@
     color: antiquewhite;
   
     transition: 0.5s;
+    transition-delay: 0.1s;
     z-index: 3;
   }
   
@@ -125,9 +128,9 @@
   
     font-family: 'Courier New', Courier, monospace;
   
-  
+    max-width: 70vw;
     width: 345px;
-    height: 1000px;
+    height: 700px;
   
     background-color: whitesmoke;
     border-radius: 3px;
@@ -137,6 +140,6 @@
     border-color: black;
     border-width: 5px;
   
-    transition: 0.2s;
+    transition: 0.3s;
   }
 }
