@@ -60,7 +60,6 @@ function App() {
   return (
       <main className={styles.main}>
         <Instructions />
-          {userDataInput.length}
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
             type="text"
