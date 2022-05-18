@@ -69,7 +69,6 @@ function App() {
   // VIEW
   return (
     <main className={styles.main}>
-        {"HELLO + " + history.length}
         <Instructions />
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
