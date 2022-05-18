@@ -4,7 +4,7 @@ import styles from './App.module.css'
 const Instructions = () => {
   return (
     <>
-      <h1>SNAPPY
+      <h1><span>SNAPPY</span>
         <div className={styles.triangle}></div>
       </h1>
       <h2>The Quick Elevator Pitch Generator</h2>
