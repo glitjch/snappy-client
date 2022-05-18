@@ -5,14 +5,20 @@ import HistoryItem from './HistoryItem';
 const History = ({userHistory}) => {
   const [focus, setFocus] = useState(false);
   
-  const historyItem = userHistory.map(log => {
+  const historyItem = userHistory.slice(0).reverse().map(log => {
     return (
-      <HistoryItem id={log.id} input={log.input} pitch={log.result} />
-    )
+      <HistoryItem 
+        id={log.id} 
+        input={log.input} 
+        pitch={log.result} 
+      />
+    );
   })
 
   return (
-    <main className={focus ? styles.focused : styles.main} onClick={() => setFocus(focus => !focus)}>
+    <main 
+      className={focus ? styles.focused : styles.main} 
+      onClick={() => setFocus(focus => !focus)}>
       {historyItem}
     </main>
   )
