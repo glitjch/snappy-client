@@ -1,9 +1,12 @@
 import React from 'react'
+import styles from './App.module.css'
 
 const Instructions = () => {
   return (
     <>
-      <h1>SNAPPY</h1>
+      <h1>SNAPPY
+        <div className={styles.triangle}></div>
+      </h1>
       <h2>The Quick Elevator Pitch Generator</h2>
       <h4>Instructions:</h4>
       <ol>
