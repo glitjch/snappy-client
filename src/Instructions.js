@@ -17,6 +17,7 @@ const Instructions = () => {
         <li>Share your goal of your pitch, e.g. to connect</li>
         <li>Click Generate Pitch!</li>
       </ol>
+      <p>hint: add to what's given and don't delete the template!</p>
     </>
   )
 }
