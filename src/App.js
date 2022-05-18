@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Instructions from "./Instructions";
+import History from "./History";
 
 import styles from './App.module.css';
 //
@@ -71,6 +72,7 @@ function App() {
            <button type="submit">Generate Pitch</button>
           <span className={error ? styles.error : styles.message}>{!error ? result : error}</span>
         </form>
+        <History />
       </main>
   );
 };
