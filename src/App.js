@@ -9,7 +9,8 @@ function App() {
   const [ userDataInput, setUserDataInput ] = useState(
     `name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
   const [ result, setResult ] = useState("No pitch yet. Follow the Instructions!");
-  const [error, setError] = useState("");
+  const [ error, setError ] = useState("");
+  const [ history, setHistory ] = useState([]);
 
   // Input length handling
   useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
       setError("Incomplete input. Please add some more detail after each prompt that appear empty or incomplete (name: John, career: chef, etc.)");
       return;
     }
+
     // API call
     const response = await fetch("/pitch", {
       mode:'cors',
@@ -54,12 +56,20 @@ function App() {
     });
     const data = await response.json();
     setResult(data.result);
+    setHistory(prev => [
+      ...prev, {
+        id: history.length,
+        userInput: userDataInput,
+        userPitch: data.result
+      }
+    ]);
     setUserDataInput(`name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
   }
   //
   // VIEW
   return (
-      <main className={styles.main}>
+    <main className={styles.main}>
+        {"HELLO + " + history.length}
         <Instructions />
         <form className={styles.form} onSubmit={handleSubmit}>
           <textarea
@@ -72,7 +82,7 @@ function App() {
            <button type="submit">Generate Pitch</button>
           <span className={error ? styles.error : styles.message}>{!error ? result : error}</span>
         </form>
-        <History />
+        <History userHistory={history}/>
       </main>
   );
 };

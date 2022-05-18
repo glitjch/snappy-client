@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './History.module.css';
 
 
-const History = () => {
+const History = ({userData}) => {
   const [focus, setFocus] = useState(false)
 
   return (
