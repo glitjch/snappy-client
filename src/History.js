@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import styles from './History.module.css';
+import HistoryItem from './HistoryItem';
 
-
-const History = ({userData}) => {
-  const [focus, setFocus] = useState(false)
+const History = ({userHistory}) => {
+  const [focus, setFocus] = useState(false);
+  
+  const historyItem = userHistory.map(log => {
+    return (
+      <HistoryItem id={log.id} input={log.input} pitch={log.result} />
+    )
+  })
 
   return (
     <main className={focus ? styles.focused : styles.main} onClick={() => setFocus(focus => !focus)}>
-      <article >
-
-      </article>
-      hello
+      {historyItem}
     </main>
   )
 }

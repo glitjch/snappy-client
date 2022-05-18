@@ -59,8 +59,8 @@ function App() {
     setHistory(prev => [
       ...prev, {
         id: history.length,
-        userInput: userDataInput,
-        userPitch: data.result
+        input: userDataInput,
+        result: data.result
       }
     ]);
     setUserDataInput(`name: \ncareer: \nspecialty: \njob-description: \ngoal: `);
