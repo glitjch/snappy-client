@@ -1,6 +1,6 @@
 ## Snappy 
 
-### This is the server side of Snappy, the quick elevator pitch generator with ai-powered customization.
+### This is the client side of Snappy, the quick elevator pitch generator with ai-powered customization.
 
 </br>
 
@@ -17,11 +17,11 @@ npm install
 
 4. Create a copy of the .env.copy file in the root directory, then place your secret API key there.
 
-5. Server-side: (this one)
+5. Server-side: 
 ```
 node app.js
 ```
-6. Client-side: 
+6. Client-side: (this one)
 ```
 npm start
 ``` 
