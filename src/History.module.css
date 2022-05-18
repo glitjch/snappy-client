@@ -17,6 +17,9 @@
   font-family: 'Courier New', Courier, monospace;
   font-size: 2rem;
   color: antiquewhite;
+
+  transition: 0.3s;
+
 }
 
 .main:hover {
@@ -28,9 +31,11 @@
 .focused {
   position: absolute;
   z-index: 3;
-  right: 0;
+  right: 20px;
   bottom: 0;
-  padding: 10px;
+  padding: 25px;
+
+  font-family: 'Courier New', Courier, monospace;
 
 
   width: 500px;
