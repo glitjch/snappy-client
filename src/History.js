@@ -19,7 +19,7 @@ const History = ({userHistory}) => {
     <main 
       className={focus ? styles.focused : styles.main} 
       onClick={() => setFocus(focus => !focus)}>
-      {historyItem}
+      {focus ? historyItem :  "History"}
     </main>
   )
 }
