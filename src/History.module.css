@@ -52,6 +52,38 @@
   transition: 0.3s;
 }
 
+@media only screen and (max-width: 1080px) {
+  .main {
+    position: fixed;
+    z-index: 3;
+
+    right: 0;
+    bottom: 60px;
+
+    width: 160px;
+    height: 20px;
+    transition: 0.3;
+
+    border-bottom-left-radius: 10px;
+    border-style: solid;
+    border-color:  #c6daf0;
+
+    font-size: 1.5rem;
+
+  }
+
+  .main:hover {
+    background-color: red;
+    color: white;
+    transition: 0.4s;
+  }
+
+  .focused {
+    width: 80vw;
+    height: 70vh;
+  }
+}
+
 @media only screen and (max-width: 428px) {
   .main {
     position: fixed;
