@@ -30,22 +30,22 @@ function App() {
   async function handleSubmit(event) {
     event.preventDefault();
     // Input error handling:
-    if (
-      // 1. nothing updated
-      event.target[0].value === `name: \ncareer: \nspecialty: \njob-description: \ngoal: ` ||
-      // 2. textarea is blank
-      event.target[0].value === ``
-      ) {
-      setError("Please enter your info after each prompt (name: , career: , etc.)");
-      return;
-    }
-    if (
-      // 3. insufficient data
-      event.target[0].value.length < 70
-      ) {
-      setError("Incomplete input. Please add some more detail after each prompt that appear empty or incomplete (name: John, career: chef, etc.)");
-      return;
-    }
+    // if (
+    //   // 1. nothing updated
+    //   event.target[0].value === `name: \ncareer: \nspecialty: \njob-description: \ngoal: ` ||
+    //   // 2. textarea is blank
+    //   event.target[0].value === ``
+    //   ) {
+    //   setError("Please enter your info after each prompt (name: , career: , etc.)");
+    //   return;
+    // }
+    // if (
+    //   // 3. insufficient data
+    //   event.target[0].value.length < 70
+    //   ) {
+    //   setError("Incomplete input. Please add some more detail after each prompt that appear empty or incomplete (name: John, career: chef, etc.)");
+    //   return;
+    // }
 
     // API call
     const response = await fetch("/pitch", {
