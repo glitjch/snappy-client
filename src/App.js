@@ -12,6 +12,8 @@ function App() {
   const [ error, setError ] = useState("");
   const [ history, setHistory ] = useState([]);
 
+  const [fields, setFields] = useState("")
+
   // Input length handling
   useEffect(() => {
       if (userDataInput.length < 52 ) {
@@ -69,15 +71,26 @@ function App() {
   // VIEW
   return (
     <main className={styles.main}>
+        {fields && fields.length}
         <Instructions />
         <form className={styles.form} onSubmit={handleSubmit}>
-          <textarea
+          <label htmlFor="name-field">Name</label>
+          <input id="name-field" name="name" required value={fields.name} minLength={2} onChange={(e)=> setFields({name: e.target.value})}/>
+          <label htmlFor="career-field">Career</label>
+          <input id="career-field" name="career" required value={fields.career} minLength={2}/>
+          <label htmlFor="specialty-field">Specialty</label>
+          <input id="specialty-field" name="specialty" required value={fields.specialty} minLength={2}/>
+          <label htmlFor="description-field">description</label>
+          <input id="description-field" name="description" required value={fields.description} minLength={2}/>
+          <label htmlFor="goal-field">Goal</label>
+          <input id="goal-field" name="goal" required value={fields.goal} minLength={2}/>
+          {/* <textarea
             type="text"
             name="user"
             placeholder="Follow the instructions"
             value={userDataInput}
             onChange={(e) => setUserDataInput(e.target.value)}
-          />
+          /> */}
            <button type="submit">Generate Pitch</button>
           <span className={error ? styles.error : styles.message}>{!error ? result : error}</span>
         </form>
